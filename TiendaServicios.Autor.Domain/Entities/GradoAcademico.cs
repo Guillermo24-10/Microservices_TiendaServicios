@@ -1,4 +1,4 @@
-﻿namespace TiendaServicios.Api.Autor.Modelo
+﻿namespace TiendaServicios.Autor.Domain
 {
     public class GradoAcademico
     {

@@ -1,11 +1,20 @@
+using TiendaServicios.Api.Autor.Extensions;
+using TiendaServicios.Api.Autor.Extensions.Middleware;
+using TiendaServicios.Autor.Application.Extensions;
+using TiendaServicios.Autor.Infrastructure.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddApplicationServices(); // Adding Application Layer services
+builder.Services.AddInfrastructureServices(builder.Configuration); // Adding Infrastructure Layer services
+builder.Services.AddApiServices(); // Adding API Layer services
+
 
 var app = builder.Build();
 
@@ -21,5 +30,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.AddMiddleware(); // Adding custom middleware
 
 app.Run();
