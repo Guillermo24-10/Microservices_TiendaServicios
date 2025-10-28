@@ -7,6 +7,6 @@ namespace TiendaServicios.Autor.Application.Features.Autores.Commands.Create
     {
         public string? Nombre { get; set; }
         public string? Apellido { get; set; }
-        public DateTime? FechaNacimiento { get; set; }
+        public DateTime FechaNacimiento { get; set; }
     }
 }

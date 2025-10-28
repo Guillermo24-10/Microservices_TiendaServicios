@@ -17,6 +17,10 @@ namespace TiendaServicios.Autor.Application.Features.Autores.Commands.Create
 
         public async Task<Result> Handle(CreateAutorCommand request, CancellationToken cancellationToken)
         {
+            if (request.FechaNacimiento.Kind == DateTimeKind.Unspecified)
+            {
+                request.FechaNacimiento = DateTime.SpecifyKind(request.FechaNacimiento, DateTimeKind.Utc);
+            }
             var autorLibro = new AutorLibro
             {
                 Nombre = request.Nombre!,

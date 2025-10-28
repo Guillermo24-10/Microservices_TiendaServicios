@@ -1,1 +1,2 @@
 git config --global --edit # para poder editar el usuario o email de git
+git config --global credential.helper 

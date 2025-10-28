@@ -1,0 +1,13 @@
+services:
+  tiendaservicios.api.autor:
+    image: tidaservicioautor-app:1.0
+    ports:
+        - "8080:80"
+    build:
+      context: .
+      dockerfile: TiendaServicios.Api.Autor/Dockerfile
+networks:
+  default:
+        external:
+            name: microservicenet
+
