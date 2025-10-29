@@ -6,8 +6,26 @@ services:
     build:
       context: .
       dockerfile: TiendaServicios.Api.Autor/Dockerfile
+  tiendaservicios.api.libro:
+    image: tiendaserviciolibro-app:1.0
+    ports:
+        - "8081:80" 
+    build:
+      context: .
+      dockerfile: TiendaServicios.Api.Libro/Dockerfile
+
+  tiendaservicios.api.carritocompra:
+    image: tiendaserviciocarritocompra-app:1.0
+    ports:
+        - "8082:80"
+    build:
+      context: .
+      dockerfile: TiendaServicios.Api.CarritoCompra/Dockerfile
+
 networks:
   default:
         external:
             name: microservicenet
+
+
 

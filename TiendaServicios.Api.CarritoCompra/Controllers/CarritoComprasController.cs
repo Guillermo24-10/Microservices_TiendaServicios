@@ -1,9 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TiendaServicios.Api.Shared.Common;
-using TiendaServicios.Api.Shared.Utils;
 using TiendaServicios.CarritoCompra.Application.DTOs;
 using TiendaServicios.CarritoCompra.Application.Features.CarritoCompra.Commands.Create;
 using TiendaServicios.CarritoCompra.Application.Features.CarritoCompra.Queries.GetCarritosById;
@@ -37,7 +35,7 @@ namespace TiendaServicios.Api.CarritoCompra.Controllers
             }
         }
 
-        [HttpGet("{id}")]   
+        [HttpGet("{id}")]
         public async Task<ActionResult<BaseResponse<CarritoDto>>> GetCarrito(int id)
         {
             try
