@@ -1,4 +1,4 @@
-services:
+﻿services:
   tiendaservicios.api.autor:
     image: tidaservicioautor-app:1.0
     ports:
@@ -22,10 +22,20 @@ services:
       context: .
       dockerfile: TiendaServicios.Api.CarritoCompra/Dockerfile
 
+  tiendaservicios.api.gateway:
+    image: tiendaserviciogateway-app:1.0
+    ports:
+        - "8083:80"
+    build:
+      context: .
+      dockerfile: TiendaServicios.Api.Gateway/Dockerfile
+
 networks:
   default:
         external:
             name: microservicenet
+
+
 
 
 
