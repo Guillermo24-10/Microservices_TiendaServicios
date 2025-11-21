@@ -9,7 +9,7 @@ using TiendaServicios.Autor.Application.Features.Autores.Queries.GetById;
 
 namespace TiendaServicios.Api.Autor.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AutorController : ControllerBase
     {

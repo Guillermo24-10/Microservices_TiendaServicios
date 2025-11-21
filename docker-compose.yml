@@ -1,6 +1,6 @@
 ﻿services:
   tiendaservicios.api.autor:
-    image: tidaservicioautor-app:1.0
+    image: tiendaservicioautor-app:1.0
     ports:
         - "8080:80"
     build:
@@ -24,6 +24,8 @@
 
   tiendaservicios.api.gateway:
     image: tiendaserviciogateway-app:1.0
+    depends_on:
+      - tiendaservicios.api.libro
     ports:
         - "8083:80"
     build:
